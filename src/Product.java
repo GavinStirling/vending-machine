@@ -37,6 +37,10 @@ public class Product {
         this.price = price;
     }
 
+    public int getMaxQty() {
+        return maxQty;
+    }
+
     public int getQty() {
         return qty;
     }
@@ -48,4 +52,6 @@ public class Product {
     public String getInfo() {
         return String.format("\nName: %s \nCategory: %s \nPrice: %s \nQty: %s\n", name, category, price, qty);
     }
+
+
 }

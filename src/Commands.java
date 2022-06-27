@@ -24,7 +24,7 @@ public class Commands {
     }
 
     public void printCommands() {
-        for (int i = 1; i <= commands.length; i++) {
+        for (int i = 0; i < commands.length; i++) {
             System.out.println((i+1) + ": " + commands[i]);
         }
     }
@@ -39,16 +39,39 @@ public class Commands {
         return userInput;
     }
 
-    public int getIntegerInput() {
-        System.out.println("Enter your text below:");
+    public int getCommandInput() {
+        System.out.println("Enter your number below:");
         int userInput = scanner.nextInt();
         if (userInput > 0 && userInput <= commands.length) {
             return userInput;
         } else {
             System.out.println("Please try again");
-            getStringInput();
+            getCommandInput();
         }
         return 0;
     }
 
+    public int getIntegerInput() {
+        System.out.println("Enter your number below:");
+        int userInput = scanner.nextInt();
+        if (userInput > 0) {
+            return userInput;
+        } else {
+            System.out.println("Please try again");
+            getIntegerInput();
+        }
+        return 0;
+    }
+
+    public double getDoubleInput() {
+        System.out.println("Enter your number below:");
+        double userInput = scanner.nextDouble();
+        if (userInput > 0.0) {
+            return userInput;
+        } else {
+            System.out.println("Please try again");
+            getDoubleInput();
+        }
+        return 0;
+    }
 }
